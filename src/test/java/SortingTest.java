@@ -1,5 +1,6 @@
-import algorithms.Algorithm;
-import algorithms.Merge;
+import algorithms.sorts.Quick;
+import algorithms.sorts.Sort;
+import algorithms.sorts.Merge;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -16,27 +17,29 @@ import static org.junit.Assert.assertEquals;
 
 public class SortingTest {
 
-    private Algorithm merge;
+    private List<Sort> algs;
     private int MAX;
 
     @Before
     public void setUp(){
-        merge = new Merge();
+        algs = new ArrayList<>();
+        algs.add(new Merge());
+        algs.add(new Quick());
         MAX = Integer.MAX_VALUE;
     }
 
     @Test
     public void test01Merge(){
-        for (int i = 5000; i < 50000; i += 5000) {
-            List<Integer> list = generator(i, MAX);
-
-            merge.setUp(list);
-            merge.start();
-            List<Integer> mergeResult = merge.result();
-            Collections.sort(list);
-            assertEquals(list, mergeResult);
+        for (Sort alg : algs) {
+            for (int i = 5000; i < 50000; i += 5000) {
+                List<Integer> list = generator(i, MAX);
+                alg.setUp(list);
+                alg.start();
+                List<Integer> res = alg.result();
+                Collections.sort(list);
+                assertEquals(list, res);
+            }
         }
-//        assertEquals();
     }
 
     private List<Integer> generator(int size, int bound){
