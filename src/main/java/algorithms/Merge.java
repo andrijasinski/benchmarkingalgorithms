@@ -12,10 +12,19 @@ public class Merge extends Algorithm {
     private String name = "Merge";
 
     @Override
-    public void start(List l) {
+    public void setUp(List l){
         this.numbers = toArray(l);
         number = l.size();
         this.helper = new int[number];
+    }
+
+    @Override
+    public List<Integer> result(){
+        return toList(numbers);
+    }
+
+    @Override
+    public void start() {
         mergesort(0, number - 1);
     }
 
@@ -70,5 +79,11 @@ public class Merge extends Algorithm {
         int[] array = new int[l.size()];
         for(int i = 0; i < l.size(); i++) array[i] = l.get(i);
         return array;
+    }
+
+    private List<Integer> toList(int[] a) {
+        List<Integer> l = new ArrayList<>();
+        for(int i = 0; i < a.length; i++) l.add(a[i]);
+        return l;
     }
 }

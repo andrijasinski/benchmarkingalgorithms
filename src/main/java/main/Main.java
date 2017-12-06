@@ -16,10 +16,10 @@ public class Main {
             for (int j = 0; j < i*10000; j++) {
                 l.add(generator.nextInt(5000));
             }
+
+            merger.setUp(l);
             long startTime = System.nanoTime();
-
-            merger.start(l);
-
+            merger.start();
             long stopTime = System.nanoTime();
             long elapsedTime = stopTime - startTime;
             System.out.println("Mergesort " + elapsedTime + " . Num of elements " + i*10000);
