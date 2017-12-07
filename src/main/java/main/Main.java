@@ -19,26 +19,33 @@ public class Main {
         quick.setUp(new ArrayList(Arrays.asList(1)));
         quick.start();
 
-        for (int i = 1; i < 10; i++) {
-            List<Integer> l = new ArrayList<>();
-            Random generator = new Random();
-            for (int j = 0; j < i*10000; j++) {
-                l.add(generator.nextInt(5000));
-            }
+        for (int i = 5000; i < 20000; i += 1000) {
+            // Integer.MAX_VALUE/46 <- maximum size of an ArrayList (stable)
+//            List<Integer> l = generator(Integer.MAX_VALUE/46, Integer.MAX_VALUE);
+            List<Integer> l = generator(i, Integer.MAX_VALUE);
 
             merger.setUp(l);
-            long startTime = System.nanoTime();
+            long startTime = System.currentTimeMillis();
             merger.start();
-            long stopTime = System.nanoTime();
-            long elapsedTime = stopTime - startTime;
-            System.out.println("\n\n" + merger.getName() + " " + elapsedTime + " . Num of elements " + i*10000);
+            long stopTime = System.currentTimeMillis();
+            double elapsedTime = (stopTime - startTime)/1000.0;
+            System.out.println("\n\n" + merger.getName() + " " + elapsedTime + " . Num of elements ");
 
             quick.setUp(l);
-            startTime = System.nanoTime();
+            startTime = System.currentTimeMillis();
             quick.start();
-            stopTime = System.nanoTime();
-            elapsedTime = stopTime - startTime;
-            System.out.println("\n" + quick.getName() + " " + elapsedTime + " . Num of elements " + i*10000);
+            stopTime = System.currentTimeMillis();
+            elapsedTime = (stopTime - startTime)/1000.0;
+            System.out.println("\n" + quick.getName() + " " + elapsedTime + " . Num of elements ");
         }
+    }
+
+    private static List<Integer> generator(int size, int bound){
+        List<Integer> l = new ArrayList<>();
+        Random generator = new Random();
+        for (int j = 0; j < size; j++) {
+            l.add(generator.nextInt(bound));
+        }
+        return l;
     }
 }
