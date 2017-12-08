@@ -1,5 +1,7 @@
 package main;
 
+import algorithms.graphs.Graph;
+import algorithms.graphs.Node;
 import algorithms.sorts.Sort;
 import algorithms.sorts.Merge;
 import algorithms.sorts.Quick;
@@ -11,6 +13,33 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        testSorts();
+        testGraphs();
+    }
+
+    private static void testGraphs() {
+        Graph graph = new Graph();
+/*        List<Node> nodes = new ArrayList<>(Arrays.asList(
+                new Node("A"),
+                new Node("B"),
+                new Node("C"),
+                new Node("D"),
+                new Node("E"),
+                new Node("F")
+        ));
+
+        graph.addNodes(nodes);
+
+        graph.generateEdges();*/
+
+        graph.generateGraph(20);
+
+        System.out.println(graph);
+
+
+    }
+
+    private static void testSorts() {
         Sort merger = new Merge();
         Sort quick = new Quick();
 
