@@ -29,7 +29,7 @@ public class SortingTest {
     }
 
     @Test
-    public void test01Merge(){
+    public void test01Sorting(){
         for (Sort alg : algs) {
             for (int i = 5000; i < 50000; i += 5000) {
                 List<Integer> list = generator(i, MAX);

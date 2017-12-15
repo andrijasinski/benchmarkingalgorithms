@@ -31,7 +31,6 @@ public class Graph {
     public void addEdge(Node start, Node end){
         if (!nodes.contains(start)) nodes.add(start);
         if (!nodes.contains(end)) nodes.add(end);
-        //TODO loops are still present in graph
         if (edges.contains(new Edge(start, end)) || edges.contains(new Edge(end, start))) return;
 
         Edge edge = new Edge(start,end);
@@ -52,16 +51,16 @@ public class Graph {
     }
 
     private void generateEdges(Node node, List<Node> nodes){
-        if (random.nextDouble() < 0.4) return;
+//        if (random.nextDouble() < 0.4) return;
         Node n = nodes.get(random.nextInt(nodes.size()));
         addEdge(node, n);
-        if (random.nextBoolean() && node.getOut().size() < nodes.size()) generateEdges(node, nodes);
+        if (random.nextDouble() < 0.35 && node.getOut().size() < nodes.size()) generateEdges(node, nodes);
     }
 
     public void generateGraph(int amountOfVerices){
         random = new Random();
-        for (int i = 0; i < amountOfVerices; i++) {
-            nodes.add(new Node(Integer.toString(random.nextInt(amountOfVerices+1))));
+        for (int i = 1; i <= amountOfVerices; i++) {
+            nodes.add(new Node(Integer.toString(i)));
         }
         generateEdges();
     }

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1.iml" filepath="$PROJECT_DIR$/.idea/modules/1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1_main.iml" filepath="$PROJECT_DIR$/.idea/modules/1_main.iml" group="1" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1_test.iml" filepath="$PROJECT_DIR$/.idea/modules/1_test.iml" group="1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/benchmarkingalgorithms.iml" filepath="$PROJECT_DIR$/.idea/modules/benchmarkingalgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/benchmarkingalgorithms_main.iml" filepath="$PROJECT_DIR$/.idea/modules/benchmarkingalgorithms_main.iml" group="benchmarkingalgorithms" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/benchmarkingalgorithms_test.iml" filepath="$PROJECT_DIR$/.idea/modules/benchmarkingalgorithms_test.iml" group="benchmarkingalgorithms" />
     </modules>
   </component>
 </project>
