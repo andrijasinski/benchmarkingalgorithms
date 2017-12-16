@@ -22,9 +22,9 @@ public class SortingMain {
         Sort merger = new Merge();
         Sort quick = new Quick();
 
-        merger.setUp(new ArrayList(Arrays.asList(1)));
+        merger.setUp(generator(10, 10));
         merger.start();
-        quick.setUp(new ArrayList(Arrays.asList(1)));
+        quick.setUp(generator(10, 10));
         quick.start();
 
         for (int i = 5000; i < 200000; i += 1000) {
