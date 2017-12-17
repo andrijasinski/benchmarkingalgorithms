@@ -8,6 +8,9 @@ public class Edge {
     public Edge(Node start, Node end) {
         this.start = start;
         this.end = end;
+
+        start.addEdgeOut(this);
+        end.addEdgeIn(this);
     }
 
     public String toString() {

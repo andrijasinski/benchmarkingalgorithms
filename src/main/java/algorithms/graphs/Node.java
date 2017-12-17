@@ -33,6 +33,7 @@ public class Node {
         this.name = name;
         out = new HashSet<Edge>();
         in = new HashSet<Edge>();
+        visited = false;
     }
 
     public Set<Edge> getEdges(){

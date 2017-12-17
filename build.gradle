@@ -13,6 +13,11 @@ task mainSort(type:JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 }
 
+task mainSearch(type:JavaExec) {
+    main = 'main.SearchingMain'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
 jar {
     manifest {
         attributes 'Main-Class': 'main.Main'

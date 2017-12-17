@@ -20,6 +20,17 @@ public class Graph {
         this.edges = E;
     }
 
+    public Graph(Graph g){
+        this.nodes = g.getNodes();
+        this.edges = g.getEdges();
+    }
+
+    public void setAllUnvisited(){
+        for (Node node : nodes) {
+            node.setVisited(false);
+        }
+    }
+
     public void addNodes(List<Node> n) {nodes.addAll(n);}
 
     public void addEdges(List<Edge> e) {edges.addAll(e);}
@@ -76,5 +87,15 @@ public class Graph {
         s = s + "}";
         return s;
     }
+
+    public List<Node> getNodes() {
+        return nodes;
+    }
+
+    public List<Edge> getEdges() {
+        return edges;
+    }
+
+
 
 }
