@@ -25,6 +25,19 @@ public class Graph {
         this.edges = g.getEdges();
     }
 
+    public int getStartingPoint(){
+        // Returns an index of node with greatest amount of outgoing edges
+        int res = 0;
+        int lastMax = 0;
+        for (int i = 0; i < nodes.size(); i++) {
+            if (nodes.get(i).getOut().size() > lastMax) {
+                res = i;
+                lastMax = nodes.get(i).getOut().size();
+            }
+        }
+        return res;
+    }
+
     public void setAllUnvisited(){
         for (Node node : nodes) {
             node.setVisited(false);

@@ -18,6 +18,7 @@ public class BFS {
     private StringBuilder result;
 
     public void setUp(Graph g){
+
         this.g = g;
         queue = new LinkedList<>();
         result = new StringBuilder();

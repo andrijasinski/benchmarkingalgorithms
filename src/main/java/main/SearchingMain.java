@@ -20,24 +20,25 @@ public class SearchingMain {
             log.info("Generating graph with " + i + " nodes");
             Graph graph = new Graph();
             graph.generateGraph(i);
+            int startingPoint = graph.getStartingPoint();
 
             bfs.setUp(graph);
             log.info("Starting BFS");
-            long startTime = System.currentTimeMillis();
-            bfs.start(2);
-            long stopTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
+            bfs.start(startingPoint);
+            long stopTime = System.nanoTime();
             double elapsedTime = (stopTime - startTime);
-            log.info("Result for BFS algorithm is: " + elapsedTime + " ms");
+            log.info("Result for BFS algorithm is: " + elapsedTime + " nanos");
 
             graph.setAllUnvisited();
 
             dfs.setUp(graph);
             log.info("Starting DFS");
-            startTime = System.currentTimeMillis();
-            dfs.start(2);
-            stopTime = System.currentTimeMillis();
+            startTime = System.nanoTime();
+            dfs.start(startingPoint);
+            stopTime = System.nanoTime();
             elapsedTime = (stopTime - startTime);
-            log.info("Result for DFS algorithm is: " + elapsedTime + " ms");
+            log.info("Result for DFS algorithm is: " + elapsedTime + " nanos");
         }
     }
 }
