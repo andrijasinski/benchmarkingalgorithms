@@ -107,7 +107,9 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 #SLURM
-
 *.out
+
+#CSV files
+*.csv
 
 # End of https://www.gitignore.io/api/java,gradle,intellij
