@@ -34,7 +34,12 @@ public class MainMatrixGraph {
 
         for (int i = 19500; i < 200001; i += 500) {
             log.info("Generating graph with " + i + " nodes");
-            graph = new MatrixGraph(i);
+            try {
+                graph = new MatrixGraph(i);
+            }
+            catch (OutOfMemoryError e) {
+                break;
+            }
             String run = "Searching;BFS;"+ i + ";";
 
             log.info("Starting BFS");

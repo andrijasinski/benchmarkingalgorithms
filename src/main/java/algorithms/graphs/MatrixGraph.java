@@ -1,5 +1,6 @@
 package algorithms.graphs;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.IntStream;
 
@@ -19,7 +20,7 @@ public class MatrixGraph {
         random = new Random();
     }
 
-    public MatrixGraph(int size) {
+    public MatrixGraph(int size) throws OutOfMemoryError{
         graph = new int[size][size];
         random = new Random();
         for (int[] layer : graph) {

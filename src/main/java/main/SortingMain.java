@@ -35,8 +35,9 @@ public class SortingMain {
         quick.setUp(generator(10, 10));
         quick.start();
 
-        Path mergesort_file = Paths.get("mergesort_results_" + getTimestamp() + ".csv");
-        Path quicksort_file = Paths.get("quicksort_results_" + getTimestamp() + ".csv");
+        ResultsSaver mergesort_file = new ResultsSaver("mergesort_results_");
+        ResultsSaver quicksort_file = new ResultsSaver("quicksort_results_");
+
         List<String> mergesort_results = new ArrayList<>(Arrays.asList(sysinfo));
         List<String> quicksort_results = new ArrayList<>(Arrays.asList(sysinfo));
 
@@ -65,8 +66,8 @@ public class SortingMain {
             quicksort_results.add(run);
         }
         try {
-            Files.write(mergesort_file, mergesort_results, Charset.forName("UTF-8"));
-            Files.write(quicksort_file, quicksort_results, Charset.forName("UTF-8"));
+            mergesort_file.writeResults(mergesort_results);
+            quicksort_file.writeResults(quicksort_results);
         } catch (IOException e) {
             e.printStackTrace();
         }
