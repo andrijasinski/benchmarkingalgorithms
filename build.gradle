@@ -8,38 +8,16 @@ repositories {
     mavenCentral()
 }
 
-//compileJava {
-//    options.warnings = false
-//    options.deprecation = false
-//    options.fork = true
-//    options.forkOptions.executable = 'javac'
-//    options.compilerArgs += ["-Xmx", "-XX:-UseGCOverheadLimit", "-nowarn"]
-//}
-
 task mainSort(type:JavaExec) {
     main = 'main.SortingMain'
     classpath = sourceSets.main.runtimeClasspath
 }
 
 task mainSearch(type:JavaExec) {
-//    args "-Xmx", "-XX:-UseGCOverheadLimit"
     main = 'main.MainMatrixGraph'
 //    main = 'main.SearchingMain'
     classpath = sourceSets.main.runtimeClasspath
-    args = ["-Xmx", "-XX:-UseGCOverheadLimit"]
 }
-
-//task fatJar(type: Jar) {
-//    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
-//    manifest {
-//        attributes 'Implementation-Title': 'Serial benchmarking suite',
-//                'Main-Class': 'main.Main'
-//    }
-//    baseName = project.name + '-all'
-//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-//    with jar
-//}
-
 
 dependencies {
     compile 'com.github.oshi:oshi-json:3.4.4'
