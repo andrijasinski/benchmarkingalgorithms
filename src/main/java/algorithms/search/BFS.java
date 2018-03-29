@@ -45,7 +45,7 @@ public class BFS {
         }
     }
 
-    public String getResult() {
-        return result.toString();
+    public String[] getResult() {
+        return result.toString().split(" ");
     }
 }

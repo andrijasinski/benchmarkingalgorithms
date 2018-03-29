@@ -28,12 +28,13 @@ public class SearchingMain {
         BFS bfs = new BFS();
         DFS dfs = new DFS();
 
-        Path bfs_file = Paths.get("bfs_results_" + getTimestamp() + ".csv");
-        Path dfs_file = Paths.get("dfs_results_" + getTimestamp() + ".csv");
+        ResultsSaver bfs_file = new ResultsSaver("bfs_results_");
+        ResultsSaver dfs_file = new ResultsSaver("dfs_results_");
+
         List<String> bfs_results = new ArrayList<>(Arrays.asList(sysinfo));
         List<String> dfs_results = new ArrayList<>(Arrays.asList(sysinfo));
 
-        for (int i = 1000; i < 10001; i += 500) {
+        for (int i = 200000; i < 200001; i += 5000) {
             log.info("Generating graph with " + i + " nodes");
             String run = "Searching;BFS;"+ i + ";";
             Graph graph = new Graph();
@@ -47,6 +48,7 @@ public class SearchingMain {
             long stopTime = System.currentTimeMillis();
             double elapsedTime = (stopTime - startTime);
             log.info("Result for BFS algorithm is: " + elapsedTime + " ms");
+            log.info("BFS results length: " + bfs.getResult().length);
             run += elapsedTime + ";";
             bfs_results.add(run);
             graph.setAllUnvisited();
@@ -59,12 +61,13 @@ public class SearchingMain {
             stopTime = System.currentTimeMillis();
             elapsedTime = (stopTime - startTime);
             log.info("Result for DFS algorithm is: " + elapsedTime + " ms");
+            log.info("DFS results length: " + dfs.getResult().length);
             run += elapsedTime + ";";
             dfs_results.add(run);
         }
         try {
-            Files.write(bfs_file, bfs_results, Charset.forName("UTF-8"));
-            Files.write(dfs_file, dfs_results, Charset.forName("UTF-8"));
+            bfs_file.writeResults(bfs_results);
+            dfs_file.writeResults(dfs_results);
         } catch (IOException e) {
             e.printStackTrace();
         }

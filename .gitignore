@@ -112,4 +112,7 @@ gradle-app.setting
 #CSV files
 *.csv
 
+#Results folder
+results/
+
 # End of https://www.gitignore.io/api/java,gradle,intellij

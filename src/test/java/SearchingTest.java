@@ -54,7 +54,7 @@ public class SearchingTest {
         bfs.setUp(graph);
         bfs.start(2);
 
-        assertEquals(bfs.getResult(), "2 0 3 1 ");
+        assertEquals("2 0 3 1 ", bfs.getResult());
         graph.setAllUnvisited();
         assertFalse(graph.getNodes().get(2).isVisited());
     }
@@ -66,7 +66,7 @@ public class SearchingTest {
         dfs.setUp(graph);
         dfs.start(3);
 
-        assertEquals(dfs.getResult(), "3 2 0 1 ");
+        assertEquals("3 2 0 1 ", dfs.getResult());
         graph.setAllUnvisited();
         assertFalse(graph.getNodes().get(2).isVisited());
     }

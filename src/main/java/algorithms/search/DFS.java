@@ -42,7 +42,7 @@ public class DFS {
         }
     }
 
-    public String getResult() {
-        return result.toString();
+    public String[] getResult() {
+        return result.toString().split(" ");
     }
 }

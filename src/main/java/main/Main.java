@@ -13,8 +13,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        testSorts();
-        testGraphs();
+        SortingMain.main(args);
+        MainMatrixGraph.main(args);
     }
 
     private static void testGraphs() {
