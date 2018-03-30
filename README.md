@@ -17,7 +17,7 @@ To run benchmark suite, please run following commands:
 ```
 $ gradle clean jar
 # In case of -XmxN - N is the amount of memory (6000m for 6 gigabytes of memory)
-$ java -jar -XmxN -XX:-UseGCOverheadLimit -jar build/libs/benchmarkingalgorithms-1.0.jar
+$ java -jar -XmxN -XX:-UseGCOverheadLimit build/libs/benchmarkingalgorithms-1.0.jar
 ```
 
 ## Gradle Tasks

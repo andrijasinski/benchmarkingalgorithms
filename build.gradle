@@ -4,6 +4,8 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+def max_heap_size="-Xmx7059403270"
+
 repositories {
     mavenCentral()
 }

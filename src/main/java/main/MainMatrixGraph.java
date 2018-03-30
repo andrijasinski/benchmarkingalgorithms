@@ -32,12 +32,13 @@ public class MainMatrixGraph {
         List<String> bfs_results = new ArrayList<>(Arrays.asList(sysinfo));
         List<String> dfs_results = new ArrayList<>(Arrays.asList(sysinfo));
 
-        for (int i = 19500; i < 200001; i += 500) {
+        for (int i = 15000; i < 500001; i += 500) {
             log.info("Generating graph with " + i + " nodes");
             try {
                 graph = new MatrixGraph(i);
             }
             catch (OutOfMemoryError e) {
+                log.error(e);
                 break;
             }
             String run = "Searching;BFS;"+ i + ";";
