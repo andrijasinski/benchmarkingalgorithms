@@ -1,11 +1,5 @@
-import algorithms.graphs.Edge;
-import algorithms.graphs.Graph;
-import algorithms.graphs.Node;
 import algorithms.search.BFS;
 import algorithms.search.DFS;
-import algorithms.sorts.Merge;
-import algorithms.sorts.Quick;
-import algorithms.sorts.Sort;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

@@ -41,7 +41,7 @@ public class SortingMain {
         List<String> mergesort_results = new ArrayList<>(Arrays.asList(sysinfo));
         List<String> quicksort_results = new ArrayList<>(Arrays.asList(sysinfo));
 
-        for (int i = 5000; i < 50000; i += 1000) {
+        for (int i = 1000; i <= 2000000; i += 1000) {
             // Integer.MAX_VALUE/46 <- maximum size of an ArrayList (stable)
             log.info("Generating array with " + i + " elements");
             List<Integer> l = generator(i, Integer.MAX_VALUE);

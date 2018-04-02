@@ -16,8 +16,7 @@ task mainSort(type:JavaExec) {
 }
 
 task mainSearch(type:JavaExec) {
-    main = 'main.MainMatrixGraph'
-//    main = 'main.SearchingMain'
+    main = 'main.SearchingMain'
     classpath = sourceSets.main.runtimeClasspath
 }
 
